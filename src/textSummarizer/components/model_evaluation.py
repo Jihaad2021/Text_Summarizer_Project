@@ -3,7 +3,7 @@ from datasets import load_dataset, load_from_disk, load_metric
 import torch 
 import pandas as pd 
 from tqdm import tqdm
-from src.textSummarizer.entity import ModelEvaluationConfig
+from textSummarizer.entity import ModelEvaluationConfig
 
 
 class ModelEvaluation:
@@ -22,8 +22,8 @@ class ModelEvaluation:
         article_batches = list(self.generate_batch_sized_chunks(dataset[column_text], batch_size))
         target_batches = list(self.generate_batch_sized_chunks(dataset[column_summary], batch_size))
         
-        for article_batches, target_batches in tqdm(zip(article_batches, target_batches), total=len(article_batches)):
-            inputs = tokenizer(article_batches, max_length=1024, truncation=True, 
+        for article_batch, target_batch in tqdm(zip(article_batches, target_batches), total=len(article_batches)):
+            inputs = tokenizer(article_batch, max_length=1024, truncation=True, 
                             padding="max_length", return_tensors="pt")
             summaries = model.generate(input_ids=inputs["input_ids"].to(device),
                             attention_mask=inputs["attention_mask"].to(device), 

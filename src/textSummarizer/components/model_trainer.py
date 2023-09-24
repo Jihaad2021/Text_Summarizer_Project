@@ -4,7 +4,7 @@ from transformers import DataCollatorForSeq2Seq
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from datasets import load_dataset, load_from_disk
 import torch
-from src.textSummarizer.entity import ModelTrainerConfig
+from textSummarizer.entity import ModelTrainerConfig
 
 class ModelTrainer:
     def __init__(self, config: ModelTrainerConfig):

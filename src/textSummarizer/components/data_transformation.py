@@ -1,6 +1,6 @@
 import os 
-from src.textSummarizer.logging import logger
-from src.textSummarizer.entity import DataTransformationConfig
+from textSummarizer.logging import logger
+from textSummarizer.entity import DataTransformationConfig
 from transformers import AutoTokenizer
 from datasets import load_dataset, load_from_disk
 
