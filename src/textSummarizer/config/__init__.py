@@ -1,0 +1,1 @@
+from textSummarizer.config.configuration import ConfigurationManager

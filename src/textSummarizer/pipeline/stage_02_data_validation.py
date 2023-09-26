@@ -1,4 +1,4 @@
-from textSummarizer.config.configuration import ConfigurationManager
+from textSummarizer.config import ConfigurationManager
 from textSummarizer.components.data_validation import DataValidation
 from textSummarizer.logging import logger
 
